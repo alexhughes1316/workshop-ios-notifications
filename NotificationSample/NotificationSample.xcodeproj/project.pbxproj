@@ -14,7 +14,36 @@
 		5D6973791DEB8A56009890AA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D6973771DEB8A56009890AA /* LaunchScreen.storyboard */; };
 		5D6973871DEBCBF1009890AA /* UNNotificationAttachment+ImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6973861DEBCBF1009890AA /* UNNotificationAttachment+ImageExtensions.swift */; };
 		5D6973A51DEBEDE0009890AA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5D6973A71DEBEDE0009890AA /* Localizable.strings */; };
+		5D6973B21DEBF960009890AA /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D6973B11DEBF960009890AA /* UserNotifications.framework */; };
+		5D6973B41DEBF960009890AA /* UserNotificationsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D6973B31DEBF960009890AA /* UserNotificationsUI.framework */; };
+		5D6973B71DEBF960009890AA /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6973B61DEBF960009890AA /* NotificationViewController.swift */; };
+		5D6973BA1DEBF960009890AA /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D6973B81DEBF960009890AA /* MainInterface.storyboard */; };
+		5D6973BE1DEBF960009890AA /* NotificationContentCard.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 5D6973AF1DEBF960009890AA /* NotificationContentCard.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5D6973BC1DEBF960009890AA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5D6973631DEB8A56009890AA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5D6973AE1DEBF960009890AA;
+			remoteInfo = NotificationContentCard;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		5D6973C21DEBF960009890AA /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				5D6973BE1DEBF960009890AA /* NotificationContentCard.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		5D69736B1DEB8A56009890AA /* NotificationSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NotificationSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -29,6 +58,12 @@
 		5D6973A81DEBEE05009890AA /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
 		5D6973A91DEBEE05009890AA /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		5D6973AA1DEBEE05009890AA /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		5D6973AF1DEBF960009890AA /* NotificationContentCard.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = NotificationContentCard.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D6973B11DEBF960009890AA /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
+		5D6973B31DEBF960009890AA /* UserNotificationsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotificationsUI.framework; path = System/Library/Frameworks/UserNotificationsUI.framework; sourceTree = SDKROOT; };
+		5D6973B61DEBF960009890AA /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
+		5D6973B91DEBF960009890AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		5D6973BB1DEBF960009890AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +74,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5D6973AC1DEBF960009890AA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5D6973B41DEBF960009890AA /* UserNotificationsUI.framework in Frameworks */,
+				5D6973B21DEBF960009890AA /* UserNotifications.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -46,6 +90,8 @@
 			isa = PBXGroup;
 			children = (
 				5D69736D1DEB8A56009890AA /* NotificationSample */,
+				5D6973B51DEBF960009890AA /* NotificationContentCard */,
+				5D6973B01DEBF960009890AA /* Frameworks */,
 				5D69736C1DEB8A56009890AA /* Products */,
 			);
 			sourceTree = "<group>";
@@ -54,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				5D69736B1DEB8A56009890AA /* NotificationSample.app */,
+				5D6973AF1DEBF960009890AA /* NotificationContentCard.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -81,6 +128,25 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		5D6973B01DEBF960009890AA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5D6973B11DEBF960009890AA /* UserNotifications.framework */,
+				5D6973B31DEBF960009890AA /* UserNotificationsUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5D6973B51DEBF960009890AA /* NotificationContentCard */ = {
+			isa = PBXGroup;
+			children = (
+				5D6973B61DEBF960009890AA /* NotificationViewController.swift */,
+				5D6973B81DEBF960009890AA /* MainInterface.storyboard */,
+				5D6973BB1DEBF960009890AA /* Info.plist */,
+			);
+			path = NotificationContentCard;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -91,15 +157,34 @@
 				5D6973671DEB8A56009890AA /* Sources */,
 				5D6973681DEB8A56009890AA /* Frameworks */,
 				5D6973691DEB8A56009890AA /* Resources */,
+				5D6973C21DEBF960009890AA /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				5D6973BD1DEBF960009890AA /* PBXTargetDependency */,
 			);
 			name = NotificationSample;
 			productName = NotificationSample;
 			productReference = 5D69736B1DEB8A56009890AA /* NotificationSample.app */;
 			productType = "com.apple.product-type.application";
+		};
+		5D6973AE1DEBF960009890AA /* NotificationContentCard */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5D6973BF1DEBF960009890AA /* Build configuration list for PBXNativeTarget "NotificationContentCard" */;
+			buildPhases = (
+				5D6973AB1DEBF960009890AA /* Sources */,
+				5D6973AC1DEBF960009890AA /* Frameworks */,
+				5D6973AD1DEBF960009890AA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NotificationContentCard;
+			productName = NotificationContentCard;
+			productReference = 5D6973AF1DEBF960009890AA /* NotificationContentCard.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -112,6 +197,11 @@
 				ORGANIZATIONNAME = "Digiflare Inc.";
 				TargetAttributes = {
 					5D69736A1DEB8A56009890AA = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = C48PVCC83Z;
+						ProvisioningStyle = Automatic;
+					};
+					5D6973AE1DEBF960009890AA = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = C48PVCC83Z;
 						ProvisioningStyle = Automatic;
@@ -133,6 +223,7 @@
 			projectRoot = "";
 			targets = (
 				5D69736A1DEB8A56009890AA /* NotificationSample */,
+				5D6973AE1DEBF960009890AA /* NotificationContentCard */,
 			);
 		};
 /* End PBXProject section */
@@ -149,6 +240,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5D6973AD1DEBF960009890AA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5D6973BA1DEBF960009890AA /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -162,7 +261,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5D6973AB1DEBF960009890AA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5D6973B71DEBF960009890AA /* NotificationViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5D6973BD1DEBF960009890AA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5D6973AE1DEBF960009890AA /* NotificationContentCard */;
+			targetProxy = 5D6973BC1DEBF960009890AA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		5D6973721DEB8A56009890AA /* Main.storyboard */ = {
@@ -190,6 +305,14 @@
 				5D6973AA1DEBEE05009890AA /* fr */,
 			);
 			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		5D6973B81DEBF960009890AA /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5D6973B91DEBF960009890AA /* Base */,
+			);
+			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -293,6 +416,7 @@
 		5D69737E1DEB8A56009890AA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = C48PVCC83Z;
 				INFOPLIST_FILE = NotificationSample/Info.plist;
@@ -306,12 +430,39 @@
 		5D69737F1DEB8A56009890AA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = C48PVCC83Z;
 				INFOPLIST_FILE = NotificationSample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.digiflare.NotificationSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		5D6973C01DEBF960009890AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = C48PVCC83Z;
+				INFOPLIST_FILE = NotificationContentCard/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.digiflare.NotificationSample.NotificationContentCard;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		5D6973C11DEBF960009890AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = C48PVCC83Z;
+				INFOPLIST_FILE = NotificationContentCard/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.digiflare.NotificationSample.NotificationContentCard;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -336,6 +487,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		5D6973BF1DEBF960009890AA /* Build configuration list for PBXNativeTarget "NotificationContentCard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5D6973C01DEBF960009890AA /* Debug */,
+				5D6973C11DEBF960009890AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

@@ -9,6 +9,27 @@
 import UIKit
 import UserNotifications
 
+// MARK: - Enums
+
+private enum Category {
+    
+    case card
+    
+    var identifier: String {
+        switch self {
+        case .card:
+            return "card"
+        }
+    }
+    
+    func makeNotificationCategory() -> UNNotificationCategory {
+        switch self {
+        case .card:
+            return UNNotificationCategory(identifier: identifier, actions: [], intentIdentifiers: [], options: [])
+        }
+    }
+}
+
 // MARK: - Constants
 
 private struct Constants {
@@ -43,16 +64,30 @@ final class ViewController: UIViewController {
     
     @IBOutlet private weak var scheduleLabel: UILabel!
     
-    private let userNotificationCenter: UNUserNotificationCenter = UNUserNotificationCenter.current()
+    private lazy var userNotificationCenter: UNUserNotificationCenter = {
+        let userNotificationCenter = UNUserNotificationCenter.current()
+        
+        // Register categories
+        let categories: [Category] = [.card]
+        
+        let notificationCategorySet = Set(categories.map({ $0.makeNotificationCategory() }))
+        
+        userNotificationCenter.setNotificationCategories(notificationCategorySet)
+        
+        return userNotificationCenter
+    }()
+    
+    private let currentCategory: Category = .card
     
     private var currentNotificationContent: UNNotificationContent {
         return UNMutableNotificationContent(title: titleTextField.text,
                                             subtitle: subtitleTextField.text,
-                                            body: bodyTextView.text)
+                                            body: bodyTextView.text,
+                                            category: currentCategory)
     }
     
     private var defaultNotificationContent: UNNotificationContent {
-        return UNMutableNotificationContent(title: nil, subtitle: nil, body: nil)
+        return UNMutableNotificationContent(title: nil, subtitle: nil, body: nil, category: currentCategory)
     }
     
     // MARK: - Methods
@@ -92,13 +127,15 @@ final class ViewController: UIViewController {
 
 private extension UNMutableNotificationContent {
     
-    convenience init(title: String?, subtitle: String?, body: String?) {
+    convenience init(title: String?, subtitle: String?, body: String?, category: Category) {
         
         self.init()
         
         self.title    = sanitizedText(for: title)
         self.subtitle = sanitizedText(for: subtitle)
         self.body     = sanitizedText(for: body)
+        
+        self.categoryIdentifier = category.identifier
         
         self.sound    = UNNotificationSound.default()
         

@@ -17,7 +17,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         // Request authorization to display alerts, sounds, badges
-        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
+        let userNotificationCenter = UNUserNotificationCenter.current()
+        userNotificationCenter.delegate = self
+        
+        userNotificationCenter.requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
             guard granted else {
                 NSLog("User notifications were not authorized. Error: \(error?.localizedDescription ?? "")")
                 return
@@ -26,5 +29,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         return true
+    }
+}
+
+// MARK: - UNUserNotificationCenterDelegate
+
+extension AppDelegate: UNUserNotificationCenterDelegate {
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        // Enable presentation of local notification while application is in the foreground
+        completionHandler([.alert, .sound])
     }
 }

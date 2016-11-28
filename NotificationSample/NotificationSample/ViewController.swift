@@ -24,7 +24,7 @@ private struct Constants {
         }
         
         struct Message {
-            static let sample = "DEFAULT TEXT"
+            static let sample = NSString.localizedUserNotificationString(forKey: "DefaultMessage", arguments: nil)
         }
     }
 }

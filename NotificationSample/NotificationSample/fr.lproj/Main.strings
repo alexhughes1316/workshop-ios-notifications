@@ -1,0 +1,24 @@
+
+/* Class = "UIButton"; normalTitle = "SUBMIT"; ObjectID = "Wpu-Rm-S6K"; */
+"Wpu-Rm-S6K.normalTitle" = "SUBMIT";
+
+/* Class = "UITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."; ObjectID = "khU-5c-eEP"; */
+"khU-5c-eEP.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
+
+/* Class = "UITextField"; placeholder = "Subtitle Text"; ObjectID = "l7t-QZ-rxU"; */
+"l7t-QZ-rxU.placeholder" = "Subtitle Text";
+
+/* Class = "UITextField"; text = "Test Subtitle"; ObjectID = "l7t-QZ-rxU"; */
+"l7t-QZ-rxU.text" = "Test Subtitle";
+
+/* Class = "UILabel"; text = "0.0s"; ObjectID = "nq3-SV-XiS"; */
+"nq3-SV-XiS.text" = "1.0s";
+
+/* Class = "UITextField"; placeholder = "Title Text"; ObjectID = "pVw-PE-ByJ"; */
+"pVw-PE-ByJ.placeholder" = "Title Text";
+
+/* Class = "UITextField"; text = "Test Title"; ObjectID = "pVw-PE-ByJ"; */
+"pVw-PE-ByJ.text" = "Test Title";
+
+/* Class = "UIButton"; normalTitle = "UPDATE"; ObjectID = "z41-4u-A7v"; */
+"z41-4u-A7v.normalTitle" = "UPDATE";

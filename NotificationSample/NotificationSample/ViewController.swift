@@ -6,6 +6,8 @@
 //  Copyright © 2016 Digiflare Inc. All rights reserved.
 //
 
+import NotificationConstants
+
 import UIKit
 import UserNotifications
 
@@ -13,39 +15,36 @@ import UserNotifications
 
 private enum Category {
     
+    case animation
+    
     case card
     
     var identifier: String {
         switch self {
+        case .animation:
+            return Constants.Notification.Category.animation
         case .card:
-            return "card"
+            return Constants.Notification.Category.card
         }
     }
     
     func makeNotificationCategory() -> UNNotificationCategory {
-        switch self {
-        case .card:
-            return UNNotificationCategory(identifier: identifier, actions: [], intentIdentifiers: [], options: [])
-        }
+        return UNNotificationCategory(identifier: identifier,
+                                      actions: makeNotificationActions(),
+                                      intentIdentifiers: [],
+                                      options: []
+        )
     }
-}
-
-// MARK: - Constants
-
-private struct Constants {
     
-    struct Notification {
-        
-        struct Attachment {
-            static let localImage = "LocalImageAttachment"
-        }
-        
-        struct Identifier {
-            static let basic = "basicIdentifier"
-        }
-        
-        struct Message {
-            static let sample = NSString.localizedUserNotificationString(forKey: "DefaultMessage", arguments: nil)
+    private func makeNotificationActions() -> [UNNotificationAction] {
+        switch self {
+        case .animation:
+            let identifiers = [Constants.Notification.Action.transform,
+                               Constants.Notification.Action.pause,
+                               Constants.Notification.Action.reset]
+            return identifiers.map { UNNotificationAction(identifier: $0) }
+        case .card:
+            return []
         }
     }
 }
@@ -64,11 +63,13 @@ final class ViewController: UIViewController {
     
     @IBOutlet private weak var scheduleLabel: UILabel!
     
+    @IBOutlet weak var categorySegmentedControl: UISegmentedControl!
+    
     private lazy var userNotificationCenter: UNUserNotificationCenter = {
         let userNotificationCenter = UNUserNotificationCenter.current()
         
         // Register categories
-        let categories: [Category] = [.card]
+        let categories: [Category] = [.animation, .card]
         
         let notificationCategorySet = Set(categories.map({ $0.makeNotificationCategory() }))
         
@@ -77,7 +78,9 @@ final class ViewController: UIViewController {
         return userNotificationCenter
     }()
     
-    private let currentCategory: Category = .card
+    private var currentCategory: Category {
+        return categorySegmentedControl.selectedSegmentIndex == 0 ? .card : .animation
+    }
     
     private var currentNotificationContent: UNNotificationContent {
         return UNMutableNotificationContent(title: titleTextField.text,
@@ -122,6 +125,18 @@ final class ViewController: UIViewController {
     
     @IBAction private func updateButtonAction(_ sender: Any) {
         scheduleNotification(for: defaultNotificationContent)
+    }
+}
+
+// MARK: - UserNotification Factory Methods
+
+private extension UNNotificationAction {
+    
+    convenience init(identifier: String) {
+        self.init(identifier: identifier,
+                  title: NSString.localizedUserNotificationString(forKey: identifier, arguments: nil),
+                  options: []
+        )
     }
 }
 

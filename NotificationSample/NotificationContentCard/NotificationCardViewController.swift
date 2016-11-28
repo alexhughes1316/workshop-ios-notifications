@@ -1,5 +1,5 @@
 //
-//  NotificationViewController.swift
+//  NotificationCardViewController.swift
 //  NotificationContentCard
 //
 //  Created by Alex Hughes on 2016-11-28.
@@ -10,7 +10,7 @@ import UIKit
 import UserNotifications
 import UserNotificationsUI
 
-class NotificationViewController: UIViewController {
+final class NotificationCardViewController: UIViewController {
     
     // MARK: - Properties
     
@@ -25,9 +25,9 @@ class NotificationViewController: UIViewController {
 
 // MARK: - UNNotificationContentExtension
 
-extension NotificationViewController: UNNotificationContentExtension {
+extension NotificationCardViewController: UNNotificationContentExtension {
     
-    func didReceive(_ notification: UNNotification) {
+    final func didReceive(_ notification: UNNotification) {
         let content = notification.request.content
         
         titleLabel.text    = content.title

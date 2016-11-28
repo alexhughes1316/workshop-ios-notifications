@@ -79,11 +79,21 @@
                                             <constraint firstItem="nq3-SV-XiS" firstAttribute="leading" secondItem="fMr-T8-Z7m" secondAttribute="trailing" constant="8" id="y7k-Ym-QMa"/>
                                         </constraints>
                                     </view>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="blf-3c-ohi" userLabel="Category Segmented Control">
+                                        <rect key="frame" x="0.0" y="201" width="343" height="31"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="xIV-gU-zFm"/>
+                                        </constraints>
+                                        <segments>
+                                            <segment title="Content Card"/>
+                                            <segment title="Animation"/>
+                                        </segments>
+                                    </segmentedControl>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Guy-2B-9rH" userLabel="Button View">
-                                        <rect key="frame" x="0.0" y="201" width="343" height="430"/>
+                                        <rect key="frame" x="0.0" y="239" width="343" height="392"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="sKs-5p-8zV">
-                                                <rect key="frame" x="0.0" y="0.0" width="343" height="98"/>
+                                                <rect key="frame" x="0.0" y="16" width="343" height="98"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wpu-Rm-S6K">
                                                         <rect key="frame" x="0.0" y="0.0" width="343" height="45"/>
@@ -129,7 +139,7 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="sKs-5p-8zV" secondAttribute="trailing" id="RoC-7v-5sq"/>
-                                            <constraint firstItem="sKs-5p-8zV" firstAttribute="top" secondItem="Guy-2B-9rH" secondAttribute="top" id="VZg-GP-gSj"/>
+                                            <constraint firstItem="sKs-5p-8zV" firstAttribute="top" secondItem="Guy-2B-9rH" secondAttribute="top" constant="16" id="VZg-GP-gSj"/>
                                             <constraint firstItem="sKs-5p-8zV" firstAttribute="leading" secondItem="Guy-2B-9rH" secondAttribute="leading" id="nde-4X-U5E"/>
                                         </constraints>
                                     </view>
@@ -146,6 +156,7 @@
                     </view>
                     <connections>
                         <outlet property="bodyTextView" destination="khU-5c-eEP" id="1e9-Gg-jnT"/>
+                        <outlet property="categorySegmentedControl" destination="blf-3c-ohi" id="G46-rR-ySm"/>
                         <outlet property="scheduleLabel" destination="nq3-SV-XiS" id="WQB-dL-PzB"/>
                         <outlet property="scheduleStepper" destination="fMr-T8-Z7m" id="StQ-B9-QlW"/>
                         <outlet property="subtitleTextField" destination="l7t-QZ-rxU" id="yxs-9e-LuA"/>

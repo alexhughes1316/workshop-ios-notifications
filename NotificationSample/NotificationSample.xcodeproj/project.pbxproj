@@ -12,6 +12,7 @@
 		5D6973741DEB8A56009890AA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D6973721DEB8A56009890AA /* Main.storyboard */; };
 		5D6973761DEB8A56009890AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D6973751DEB8A56009890AA /* Assets.xcassets */; };
 		5D6973791DEB8A56009890AA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D6973771DEB8A56009890AA /* LaunchScreen.storyboard */; };
+		5D6973871DEBCBF1009890AA /* UNNotificationAttachment+ImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6973861DEBCBF1009890AA /* UNNotificationAttachment+ImageExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		5D6973751DEB8A56009890AA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5D6973781DEB8A56009890AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5D69737A1DEB8A56009890AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5D6973861DEBCBF1009890AA /* UNNotificationAttachment+ImageExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UNNotificationAttachment+ImageExtensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 		5D69736D1DEB8A56009890AA /* NotificationSample */ = {
 			isa = PBXGroup;
 			children = (
+				5D6973851DEBCBF1009890AA /* Extensions */,
 				5D69736E1DEB8A56009890AA /* AppDelegate.swift */,
 				5D6973701DEB8A56009890AA /* ViewController.swift */,
 				5D6973721DEB8A56009890AA /* Main.storyboard */,
@@ -62,6 +65,14 @@
 				5D69737A1DEB8A56009890AA /* Info.plist */,
 			);
 			path = NotificationSample;
+			sourceTree = "<group>";
+		};
+		5D6973851DEBCBF1009890AA /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5D6973861DEBCBF1009890AA /* UNNotificationAttachment+ImageExtensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,6 +148,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D6973871DEBCBF1009890AA /* UNNotificationAttachment+ImageExtensions.swift in Sources */,
 				5D6973711DEB8A56009890AA /* ViewController.swift in Sources */,
 				5D69736F1DEB8A56009890AA /* AppDelegate.swift in Sources */,
 			);
@@ -302,6 +314,7 @@
 				5D69737F1DEB8A56009890AA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

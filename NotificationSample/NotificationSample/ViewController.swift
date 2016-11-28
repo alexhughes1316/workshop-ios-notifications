@@ -15,7 +15,11 @@ final class ViewController: UIViewController {
     
     private struct Constants {
         
-        struct Notifications {
+        struct Notification {
+            
+            struct Attachment {
+                static let localImage = "LocalImageAttachment"
+            }
             
             struct Identifier {
                 static let basic = "basicIdentifier"
@@ -49,6 +53,11 @@ final class ViewController: UIViewController {
         content.body     = bodyTextView.text
         content.sound    = UNNotificationSound.default()
         
+        let imageName = Constants.Notification.Attachment.localImage
+        if let image = UIImage(named: imageName), let imageAttachment = UNNotificationAttachment(identifier: imageName, image: image) {
+            content.attachments = [imageAttachment]
+        }
+        
         return content
     }
     
@@ -57,7 +66,7 @@ final class ViewController: UIViewController {
         // Schedule trigger based on time interval
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: scheduleStepper.value, repeats: false)
         
-        let request = UNNotificationRequest(identifier: Constants.Notifications.Identifier.basic,
+        let request = UNNotificationRequest(identifier: Constants.Notification.Identifier.basic,
                                             content: makeNotificationContent(),
                                             trigger: trigger)
         

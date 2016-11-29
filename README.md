@@ -18,7 +18,7 @@ The objective of this application is to learn the following:
 
 ## WWDC 2016 Sessions
 - ["Introduction to Notifications"](https://developer.apple.com/videos/play/wwdc2016/707/)
-- ["Advanced Notifications"(https://developer.apple.com/videos/play/wwdc2016/708/)
+- ["Advanced Notifications"](https://developer.apple.com/videos/play/wwdc2016/708/)
 
 ## Sample Implementation
 Tags have been pushed to mark sample implementation for each task (e.g. ["Task 0"](https://github.com/alexhughes1316/workshop-ios-notifications/releases/tag/task-0))
